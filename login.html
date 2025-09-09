@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Green Flames</title>
-    <link rel="stylesheet" href="css/login.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Green Flames</title>
+  <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <div class="login-container">
-        <header>
-            <img src="logo.png" alt="Projeto Green Flames" class="logo">
-            <h1>GREEN FLAMES</h1>
-        </header>
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header class="header">
+      <img src="logo.png" alt="Logo Green Flames" class="logo">
+      <h1>GREEN FLAMES</h1>
+    </header>
 
-        <div class="login-box">
-            <div class="avatar">
-                <img src="avatar.png" alt="Avatar Bombeiro">
-            </div>
-            <h2>Login</h2>
-            <form>
-                <input type="email" placeholder="E-mail" required>
-                <div class="password-container">
-                    <input type="password" placeholder="Senha" required>
-                    <span class="toggle-password">👁️</span>
-                </div>
-                <button type="submit">Entrar</button>
-            </form>
-            <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+    <!-- Card de Login -->
+    <div class="login-card">
+      <img src="avatar.png" alt="Avatar Bombeiro" class="avatar">
+      <h2>Login</h2>
+
+      <form>
+        <div class="input-group">
+          <input type="email" placeholder="E-mail" required>
         </div>
+        <div class="input-group password-group">
+          <input type="password" id="senha" placeholder="Senha" required>
+          <span class="toggle-password" onclick="toggleSenha()">👁</span>
+        </div>
+        <button type="submit" class="btn">Entrar</button>
+        <a href="#" class="forgot">Esqueceu sua senha?</a>
+      </form>
     </div>
+  </div>
+
+  <script>
+    function toggleSenha() {
+      const senha = document.getElementById("senha");
+      senha.type = senha.type === "password" ? "text" : "password";
+    }
+  </script>
 </body>
 </html>
+
